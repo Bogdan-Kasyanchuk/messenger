@@ -27,7 +27,8 @@ h6 {
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  ${'' /* font-family: 'Lato', sans-serif; */}
   font-weight: 400;
   ${'' /* color: ${firstColor}; */}
 }
