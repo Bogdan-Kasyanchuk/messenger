@@ -1,0 +1,145 @@
+[
+  {
+    "id": "id-1",
+    "name": "Alice Freeman",
+    "avatar": "https://cdn0.iconfinder.com/data/icons/avatars-and-smiles-collection/110/Icons__goose-512.png",
+    "status": "online",
+    "message": [
+      {
+        "body": "Lorem Ipsum has been the industry's",
+        "date": "June 13, 2017",
+        "owner": "interlocutor"
+      },
+      {
+        "body": "is simply dummy text of the printing",
+        "date": "June 12, 2017",
+        "owner": "User"
+      }
+    ]
+  },
+  {
+    "id": "id-2",
+    "name": "Josefina",
+    "avatar": "https://cdn0.iconfinder.com/data/icons/avatars-and-smiles-collection/110/Icons__goose-512.png",
+    "status": "online",
+    "message": [
+      {
+        "body": "Lorem Ipsum has been the industry's",
+        "date": "Feb 18, 2017",
+        "owner": "interlocutor"
+      },
+      {
+        "body": "is simply dummy text of the printing",
+        "date": "Feb 17, 2017",
+        "owner": "User"
+      }
+    ]
+  },
+  {
+    "id": "id-3",
+    "name": "Velazquez",
+    "avatar": "https://cdn0.iconfinder.com/data/icons/avatars-and-smiles-collection/110/Icons__business-512.png",
+    "status": "online",
+    "message": [
+      {
+        "body": "Lorem Ipsum has been the industry's",
+        "date": "Mar 18, 2017",
+        "owner": "interlocutor"
+      },
+      {
+        "body": "is simply dummy text of the printing",
+        "date": "Mar 17, 2017",
+        "owner": "User"
+      }
+    ]
+  },
+  {
+    "id": "id-4",
+    "name": "Barrere",
+    "avatar": "https://cdn0.iconfinder.com/data/icons/avatars-and-smiles-collection/110/Icons__goose-512.png",
+    "status": "online",
+    "message": [
+      {
+        "body": "Lorem Ipsum has been the industry's",
+        "date": "Feb 20, 2017",
+        "owner": "interlocutor"
+      },
+      {
+        "body": "is simply dummy text of the printing",
+        "date": "Feb 19, 2017",
+        "owner": "User"
+      }
+    ]
+  },
+  {
+    "id": "id-5",
+    "name": "Hermione Kline",
+    "avatar": "https://cdn0.iconfinder.com/data/icons/avatars-and-smiles-collection/110/Icons__goose-512.png",
+    "status": "offline",
+    "message": [
+      {
+        "body": "Lorem Ipsum has been the industry's",
+        "date": "Feb 10, 2017",
+        "owner": "interlocutor"
+      },
+      {
+        "body": "is simply dummy text of the printing",
+        "date": "Feb 9, 2017",
+        "owner": "User"
+      }
+    ]
+  },
+  {
+    "id": "id-6",
+    "name": "Annie Copeland",
+    "avatar": "https://cdn0.iconfinder.com/data/icons/avatars-and-smiles-collection/110/Icons__goose-512.png",
+    "status": "offline",
+    "message": [
+      {
+        "body": "Lorem Ipsum has been the industry's",
+        "date": "Mar 15, 2017",
+        "owner": "interlocutor"
+      },
+      {
+        "body": "is simply dummy text of the printing",
+        "date": "Mar 14, 2017",
+        "owner": "User"
+      }
+    ]
+  },
+  {
+    "id": "id-7",
+    "name": "Morgan",
+    "avatar": "https://cdn0.iconfinder.com/data/icons/avatars-and-smiles-collection/110/Icons__business-512.png",
+    "status": "offline",
+    "message": [
+      {
+        "body": "Lorem Ipsum has been the industry's",
+        "date": "Mar 12rlocutor"
+      },
+      {
+        "body": "is simply dummy text of the printing",
+        "date": "Mar 11, 2017",
+        "owner": "User"
+      }
+    ]
+  },
+  {
+    "id": "id-8",
+    "name": "Jon Doe",
+    "avatar": "https://cdn0.iconfinder.com/data/icons/avatars-and-smiles-collection/110/Icons__business-512.png",
+    "status": "offline",
+    "message": [
+      {
+        "body": "Lorem Ipsum has been the industry's",
+        "date": "June 8, 2017",
+        "owner": "interlocutor"
+      },
+      {
+        "body": "is simply dummy text of the printing",
+        "date": "June 7, 2017",
+        "owner": "User"
+      }
+    ]
+  }
+]
