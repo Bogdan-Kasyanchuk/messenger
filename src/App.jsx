@@ -87,7 +87,7 @@ function App() {
           }
         </Media>
       </Container>
-      <Toaster position="top-right" toastOptions={{ duration: 100000 }} />
+      <Toaster position="top-right" toastOptions={{ duration: 3000 }} />
     </>
   );
 }
