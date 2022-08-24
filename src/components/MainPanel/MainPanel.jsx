@@ -1,37 +1,76 @@
-import { useState } from 'react';
-
 import styled from 'styled-components';
-import HeaderMainPanel from 'components/HeaderMainPanel';
-import ContactsMainPanel from 'components/ContactsMainPanel';
+import Media from 'react-media';
+import PropTypes from 'prop-types';
+import User from 'components/User';
+import FilterContacts from 'components/FilterContacts';
+import SubTitle from 'components/SubTitle';
+import ContactsList from 'components/ContactsList';
+import useFilter from 'hooks/useFilter';
+import userData from 'data/user';
 
-function MainPanel({ contacts }) {
-  const [filter, setFilter] = useState('');
-
-  const handleChangeFilter = e => {
-    setFilter(e.target.value);
-  };
-
-  const getFilterContacts = () => {
-    return contacts.filter(element =>
-      element.name.toLowerCase().includes(filter.toLowerCase().trim()),
-    );
-  };
-
-  const contactsList = filter ? getFilterContacts() : contacts;
+function MainPanel({ contacts, handlerClick }) {
+  const { value, handlerChangeInput, filteredContacts } = useFilter(contacts);
 
   return (
-    <Div>
-      <HeaderMainPanel
-        filter={filter}
-        handleChangeFilter={handleChangeFilter}
-      />
-      <ContactsMainPanel contactsList={contactsList} />
-    </Div>
+    <BoxMainPanel>
+      <Header>
+        <User
+          avatar={userData.avatar}
+          name={userData.name}
+          status={userData.status}
+        />
+        <FilterContacts value={value} handlerChangeInput={handlerChangeInput} />
+      </Header>
+      <BoxContactsList>
+        <Media
+          query="(min-width: 768px)"
+          render={() => <SubTitle>Chats</SubTitle>}
+        />
+
+        <ContactsList
+          filteredContacts={filteredContacts}
+          handlerClick={handlerClick}
+        />
+      </BoxContactsList>
+    </BoxMainPanel>
   );
 }
 
+MainPanel.propTypes = {
+  contacts: PropTypes.array,
+};
+
 export default MainPanel;
 
-const Div = styled.div`
+const BoxMainPanel = styled.div`
+  min-width: 320px;
+  width: 100%;
+  overflow-y: scroll;
+
+  @media screen and (min-width: 768px) {
+    min-width: 360px;
+    flex-basis: 35%;
+  }
+`;
+
+const Header = styled.div`
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  min-width: 320px;
+  padding: 15px;
+  border-bottom: 1px solid #dcdcdc;
   border-right: 1px solid #dcdcdc;
+  background-color: #f5f5f5;
+
+  @media screen and (min-width: 768px) {
+    width: 35%;
+    min-width: 360px;
+    max-width: 490px;
+  }
+`;
+
+const BoxContactsList = styled.div`
+  padding-top: 160px;
 `;

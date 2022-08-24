@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 function SubTitle({ children }) {
-  return <H2>{children}</H2>;
+  return <Text>{children}</Text>;
 }
 
 SubTitle.propTypes = {
@@ -11,10 +11,8 @@ SubTitle.propTypes = {
 
 export default SubTitle;
 
-const H2 = styled.h2`
-  margin-top: 32px;
-  margin-bottom: 40px;
-  font-size: 24px;
+const Text = styled.h2`
+  padding: 40px 0 40px 15px;
+  font-size: 26px;
   color: #91dcfc;
-  padding-left: 15px;
 `;
