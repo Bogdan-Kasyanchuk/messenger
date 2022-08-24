@@ -1,28 +1,28 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import Avatar from 'components/Avatar';
-import userData from 'data/user';
 
-function User() {
+function User({ avatar, name, status }) {
   return (
-    <Div>
-      <Avatar
-        src={userData.avatar}
-        alt={userData.name}
-        status={userData.status}
-      />
-      <P>{userData.name}</P>
-    </Div>
+    <BoxAvatar>
+      <Avatar src={avatar} alt={name} status={status} />
+      <Name>{name}</Name>
+    </BoxAvatar>
   );
 }
 
+User.propTypes = {
+  name: PropTypes.string.isRequired,
+};
+
 export default User;
 
-const Div = styled.div`
+const BoxAvatar = styled.div`
   display: flex;
   align-items: center;
 `;
 
-const P = styled.p`
+const Name = styled.p`
   margin-left: 20px;
-  font-size: 16px;
+  font-size: 26px;
 `;

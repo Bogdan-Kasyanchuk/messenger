@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
-// import { size, firstColor } from 'styles/variables';
 
 const GlobalStyles = createGlobalStyle`
 ${normalize}
@@ -27,10 +26,9 @@ h6 {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  ${'' /* font-family: 'Lato', sans-serif; */}
+  font-family: 'Mulish', sans-serif;
+  font-size: 16px;
   font-weight: 400;
-  ${'' /* color: ${firstColor}; */}
 }
 
 button,
@@ -57,15 +55,8 @@ img {
   object-fit: cover;
 }
 
-button,
-label, 
-a {
+button {
   cursor: pointer;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
 }
 `;
 

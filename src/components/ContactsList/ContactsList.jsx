@@ -1,16 +1,39 @@
-import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import ContactItem from 'components/ContactItem';
+import getTime from 'helpers/getTime';
 
-const ContactsList = ({ contactsList }) => {
+const ContactsList = ({ filteredContacts, handlerClick }) => {
+  const sortFilteredContacts = filteredContacts
+    .map(el => {
+      const arrayDateMessages = el.message.map(el => getTime(el.date));
+      const arrayNotReadMessages = el.message.filter(el => el.read === false);
+      const maxDateMessages = el.message.find(
+        el => getTime(el.date) === Math.max(...arrayDateMessages),
+      );
+
+      return {
+        id: el.id,
+        name: el.name,
+        avatar: el.avatar,
+        status: el.status,
+        notRead: arrayNotReadMessages.length,
+        message: maxDateMessages,
+      };
+    })
+    .sort((a, b) => getTime(b.message.date) - getTime(a.message.date));
+
   return (
-    <List>
-      {contactsList.map(el => (
+    <ul onClick={handlerClick}>
+      {sortFilteredContacts.map(el => (
         <ContactItem key={el.id} el={el} />
       ))}
-    </List>
+    </ul>
   );
 };
 
-export default ContactsList;
+ContactsList.propTypes = {
+  filteredContacts: PropTypes.array,
+  handlerClick: PropTypes.func,
+};
 
-const List = styled.ul``;
+export default ContactsList;
