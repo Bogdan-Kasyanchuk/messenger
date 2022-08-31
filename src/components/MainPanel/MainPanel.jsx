@@ -8,7 +8,7 @@ import ContactsList from 'components/ContactsList';
 import useFilter from 'hooks/useFilter';
 import userData from 'data/user';
 
-function MainPanel({ contacts, handlerClick }) {
+function MainPanel({ contacts, messages, handlerClick }) {
   const { value, handlerChangeInput, filteredContacts } = useFilter(contacts);
 
   return (
@@ -29,6 +29,7 @@ function MainPanel({ contacts, handlerClick }) {
 
         <ContactsList
           filteredContacts={filteredContacts}
+          messages={messages}
           handlerClick={handlerClick}
         />
       </BoxContactsList>

@@ -13,6 +13,7 @@ import CreateMessage from 'helpers/CreateMessage';
 
 function ChatPanel({
   checkedContact,
+  messages,
   getMessage,
   idContact,
   hundlerButton,
@@ -23,7 +24,7 @@ function ChatPanel({
   const chatContainer = useRef();
 
   const handlerMessage = value => {
-    getMessage(new CreateMessage(value, 'user'));
+    getMessage(new CreateMessage(value, idContact, 'user'));
     setIsSend(true);
     setIsScroll(prev => !prev);
   };
@@ -40,7 +41,7 @@ function ChatPanel({
       const idTimeOut = setTimeout(() => {
         getJokes()
           .then(data => {
-            getMessage(new CreateMessage(data, 'interlocutor'));
+            getMessage(new CreateMessage(data, idContact, 'interlocutor'));
           })
           .then(() => setIsScroll(prev => !prev))
           .catch(error => console.log(error.message));
@@ -66,7 +67,7 @@ function ChatPanel({
             />
           </Header>
           <BoxChatList ref={chatContainer}>
-            <ChatList checkedContact={checkedContact} />
+            <ChatList checkedContact={checkedContact} messages={messages} />
           </BoxChatList>
           <FormSendMessange handlerMessage={handlerMessage} />
         </>

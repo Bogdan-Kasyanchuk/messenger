@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Avatar from 'components/Avatar';
 import getLocaleDate from 'helpers/getLocaleDate';
 
-function ChatItem({ el, avatar, name, id }) {
+function ChatItem({ el, avatar, name }) {
   const localeDate = getLocaleDate(el.date, {
     day: 'numeric',
     month: 'numeric',
@@ -13,7 +13,7 @@ function ChatItem({ el, avatar, name, id }) {
   });
 
   return (
-    <Item data-id={id} owner={el.owner}>
+    <Item data-id={el.id} owner={el.owner}>
       {el.owner === 'interlocutor' && <Avatar src={avatar} alt={name} />}
       <BoxContent owner={el.owner}>
         <Message owner={el.owner}>{el.body}</Message>
@@ -24,9 +24,9 @@ function ChatItem({ el, avatar, name, id }) {
 }
 
 ChatItem.propTypes = {
-  id: PropTypes.string.isRequired,
   el: PropTypes.shape({
     date: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
     owner: PropTypes.string.isRequired,
     body: PropTypes.string.isRequired,
   }),

@@ -1,0 +1,182 @@
+[
+  {
+    "idOwner": "id-1",
+    "id": "f27933ef-a192-413e-bc62-210cee678915",
+    "body": "Is simply dummy text of the printing and typesetting industry",
+    "date": "9/12/2017, 11:00:00 AM",
+    "owner": "interlocutor",
+    "read": false
+  },
+  {
+    "idOwner": "id-1",
+    "id": "8df7ff35-b114-41f9-85a6-00208e44f879",
+    "body": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+    "date": "9/15/2017, 12:00:00 AM",
+    "owner": "user"
+  },
+  {
+    "idOwner": "id-1",
+    "id": "e1c608a2-eef3-4300-8578-31f09e745d61",
+    "body": "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
+    "date": "10/10/2017, 10:00:00 AM",
+    "owner": "interlocutor",
+    "read": false
+  },
+  {
+    "idOwner": "id-1",
+    "id": "3a269d7a-c969-4300-801b-7f2eff3328dd",
+    "body": "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+    "date": "10/10/2017, 10:30:00 AM",
+    "owner": "user"
+  },
+  {
+    "idOwner": "id-2",
+    "id": "9c9b5fff-3f10-4de5-883c-d6d929e69778",
+    "body": "Lorem Ipsum is not simply random text",
+    "date": "4/22/2017, 4:00:00 AM",
+    "owner": "interlocutor",
+    "read": false
+  },
+  {
+    "idOwner": "id-2",
+    "id": "ab61fbd7-6b3a-4815-9093-84ba2b7a999e",
+    "body": "It has roots in a piece of classical Latin literature from",
+    "date": "4/22/2017, 4:05:00 AM",
+    "owner": "user"
+  },
+  {
+    "idOwner": "id-3",
+    "id": "d36452a4-c6fb-4008-9ce1-2cd621675390",
+    "body": "Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source",
+    "date": "3/17/2017, 11:15:00 AM",
+    "owner": "interlocutor",
+    "read": false
+  },
+  {
+    "idOwner": "id-3",
+    "id": "91c3ff02-e236-4432-976d-db182aadbccd",
+    "body": "This book is a treatise on the theory of ethics, very popular during the Renaissance",
+    "date": "3/18/2017, 11:35:00 AM",
+    "owner": "user"
+  },
+  {
+    "idOwner": "id-3",
+    "id": "b83f3fd6-9e86-40d8-bdf7-d787231a1855",
+    "body": "t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout",
+    "date": "3/20/2017, 11:13:00 AM",
+    "owner": "interlocutor",
+    "read": false
+  },
+  {
+    "idOwner": "id-3",
+    "id": "04e9329a-2196-45e6-84c1-98d68033756d",
+    "body": "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English",
+    "date": "3/20/2017, 11:30:00 AM",
+    "owner": "user"
+  },
+  {
+    "idOwner": "id-4",
+    "id": "0a7b37da-dc7d-45fd-9c0c-30ead3c74981",
+    "body": "Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy",
+    "date": "2/19/2017, 11:00:00 AM",
+    "owner": "interlocutor",
+    "read": false
+  },
+  {
+    "idOwner": "id-4",
+    "id": "01f4309d-9181-4c17-8ca4-3ec60d0714c5",
+    "body": "Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)",
+    "date": "2/20/2017, 12:00:00 AM",
+    "owner": "user"
+  },
+  {
+    "idOwner": "id-5",
+    "id": "7e5a3f07-cd45-40ad-bb01-e9fd9c385dc8",
+    "body": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable",
+    "date": "2/9/2017, 11:00:00 AM",
+    "owner": "interlocutor",
+    "read": false
+  },
+  {
+    "idOwner": "id-5",
+    "id": "fd6ce7ed-03a5-4584-ad2a-8d6a08992a17",
+    "body": "If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text",
+    "date": "2/10/2017, 12:00:00 AM",
+    "owner": "user"
+  },
+  {
+    "idOwner": "id-6",
+    "id": "80c3b1f4-2133-4635-93bf-717bf1364299",
+    "body": "Phasellus nec imperdiet massa",
+    "date": "3/14/2017, 11:00:00 AM",
+    "owner": "interlocutor",
+    "read": false
+  },
+  {
+    "idOwner": "id-6",
+    "id": "99c24e6e-29e0-4fd1-a6f4-2a1010a0e240",
+    "body": "Phasellus commodo hendrerit arcu eu mattis",
+    "date": "3/15/2017, 12:00:00 AM",
+    "owner": "user"
+  },
+  {
+    "idOwner": "id-6",
+    "id": "3fdca624-66c6-4c16-9e8a-8c911d17d500",
+    "body": "Aenean in sagittis urna, eu congue enim",
+    "date": "3/16/2017, 11:10:00 AM",
+    "owner": "interlocutor",
+    "read": false
+  },
+  {
+    "idOwner": "id-6",
+    "id": "c8c95796-a4f6-4a67-af8e-a651c801ee9c",
+    "body": "Ut rutrum nibh ante, quis suscipit massa pharetra eu",
+    "date": "3/17/2017, 11:20:00 AM",
+    "owner": "user"
+  },
+  {
+    "idOwner": "id-7",
+    "id": "37c9ac33-1d42-4c4a-84b6-a3f835038047",
+    "body": "Nunc quis rhoncus elit, nec condimentum lacus. Proin pretium efficitur magna ut fringilla",
+    "date": "3/11/2017, 11:00:00 AM",
+    "owner": "interlocutor",
+    "read": false
+  },
+  {
+    "idOwner": "id-7",
+    "id": "8acf022e-b839-4a3c-867f-806ad4daabaf",
+    "body": "Etiam ac quam sed sapien tincidunt fermentum vitae sed dolor",
+    "date": "3/12/2017, 12:00:00 AM",
+    "owner": "user"
+  },
+  {
+    "idOwner": "id-8",
+    "id": "4879f508-7dfc-45f9-b552-1a94b6444ea5",
+    "body": "Mauris vitae auctor urna. Nunc eu nunc vitae turpis cursus pulvinar. Sed vitae nisi vulputate, sodales enim eu, sollicitudin massa",
+    "date": "6/7/2017, 10:30:00 AM",
+    "owner": "interlocutor",
+    "read": false
+  },
+  {
+    "idOwner": "id-8",
+    "id": "c7fa7c59-510f-4964-9fad-f073d87c4a34",
+    "body": "Morbi vitae vehicula purus. Duis vitae elementum ante, faucibus venenatis quam",
+    "date": "6/8/2017, 10:50:00 AM",
+    "owner": "user"
+  },
+  {
+    "idOwner": "id-8",
+    "id": "976ad5bd-7bce-428f-85ff-6bc32e7acb98",
+    "body": "In nec eros sit amet nulla pretium finibus. Ut porta, lectus at consectetur volutpat, turpis tortor dictum nisl, ac varius nisl mi sit amet velit",
+    "date": "6/10/2017, 11:00:00 AM",
+    "owner": "interlocutor",
+    "read": false
+  },
+  {
+    "idOwner": "id-8",
+    "id": "84151de6-13e6-42f0-b185-11b906848f06",
+    "body": "Curabitur efficitur tellus et leo ornare, in rhoncus sem pretium. Mauris faucibus, diam quis congue pharetra, risus leo cursus urna, placerat scelerisque odio odio et ex",
+    "date": "6/11/2017, 11:45:00 AM",
+    "owner": "user"
+  }
+]

@@ -1,26 +1,26 @@
 import PropTypes from 'prop-types';
 import ChatItem from 'components/ChatItem';
 
-const ChatList = ({ checkedContact }) => {
+const ChatList = ({ checkedContact, messages }) => {
   return (
     <ul>
-      {checkedContact.message.map(el => (
-        <ChatItem
-          key={el.id}
-          el={el}
-          id={el.id}
-          avatar={checkedContact.avatar}
-          name={checkedContact.name}
-        />
-      ))}
+      {messages.map(
+        el =>
+          el.idOwner === checkedContact.id && (
+            <ChatItem
+              key={el.id}
+              el={el}
+              avatar={checkedContact.avatar}
+              name={checkedContact.name}
+            />
+          ),
+      )}
     </ul>
   );
 };
 
 ChatList.propTypes = {
-  checkedContact: PropTypes.shape({
-    message: PropTypes.array,
-  }),
+  messages: PropTypes.array,
 };
 
 export default ChatList;

@@ -1,7 +1,8 @@
 import getLocaleDate from 'helpers/getLocaleDate';
 
 class CreateMessage {
-  constructor(body, owner) {
+  constructor(body, idOwner, owner) {
+    this.idOwner = idOwner;
     this.id = crypto.randomUUID();
     this.body = body;
     this.date = getLocaleDate(null, {

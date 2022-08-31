@@ -8,11 +8,13 @@ import ChatPanel from 'components/ChatPanel';
 import useLocalStorage from 'hooks/useLocalStorage';
 import toastCustom from 'helpers/toastCustom';
 import contactsData from 'data/contacts';
+import messagesData from 'data/messages';
 import newMessage from 'assets/newMessage.mp3';
 
 function App() {
-  const [contacts, setContacts] = useLocalStorage(contactsData);
+  const [contacts] = useState(contactsData);
   const [idContact, setIdContact] = useState(null);
+  const [messages, setMessages] = useLocalStorage(messagesData);
   const [play] = useSound(newMessage);
 
   useEffect(() => {
@@ -43,17 +45,21 @@ function App() {
         message.body,
       );
     }
-    contacts[idCheckedContact].message.push(message);
-    setContacts([...contacts]);
+    setMessages(prev => [...prev, message]);
   };
 
   const setReadMessage = () => {
-    contacts[idCheckedContact].message.forEach(el => {
-      if (el.read === false) {
-        el.read = true;
+    const copyMessages = messages.map(el => {
+      if (el.idOwner === idContact && el.read === false) {
+        return {
+          ...el,
+          read: true,
+        };
+      } else {
+        return el;
       }
     });
-    setContacts([...contacts]);
+    setMessages(copyMessages);
   };
 
   return (
@@ -65,19 +71,29 @@ function App() {
               idContact ? (
                 <ChatPanel
                   checkedContact={contacts[idCheckedContact]}
+                  messages={messages}
                   getMessage={addMessage}
                   setReadMessage={setReadMessage}
                   idContact={idContact}
                   hundlerButton={onClickKeyDown}
                 />
               ) : (
-                <MainPanel contacts={contacts} handlerClick={setId} />
+                <MainPanel
+                  contacts={contacts}
+                  messages={messages}
+                  handlerClick={setId}
+                />
               )
             ) : (
               <>
-                <MainPanel contacts={contacts} handlerClick={setId} />
+                <MainPanel
+                  contacts={contacts}
+                  messages={messages}
+                  handlerClick={setId}
+                />
                 <ChatPanel
                   checkedContact={contacts[idCheckedContact]}
+                  messages={messages}
                   getMessage={addMessage}
                   setReadMessage={setReadMessage}
                   idContact={idContact}

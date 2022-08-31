@@ -2,20 +2,23 @@ import PropTypes from 'prop-types';
 import ContactItem from 'components/ContactItem';
 import getTime from 'helpers/getTime';
 
-const ContactsList = ({ filteredContacts, handlerClick }) => {
+const ContactsList = ({ filteredContacts, messages, handlerClick }) => {
   const sortFilteredContacts = filteredContacts
-    .map(el => {
-      const arrayDateMessages = el.message.map(el => getTime(el.date));
-      const arrayNotReadMessages = el.message.filter(el => el.read === false);
-      const maxDateMessages = el.message.find(
+    .map(elem => {
+      const arrayMessages = messages.filter(el => el.idOwner === elem.id);
+      const arrayDateMessages = arrayMessages.map(el => getTime(el.date));
+      const arrayNotReadMessages = arrayMessages.filter(
+        el => el.read === false,
+      );
+      const maxDateMessages = arrayMessages.find(
         el => getTime(el.date) === Math.max(...arrayDateMessages),
       );
 
       return {
-        id: el.id,
-        name: el.name,
-        avatar: el.avatar,
-        status: el.status,
+        id: elem.id,
+        name: elem.name,
+        avatar: elem.avatar,
+        status: elem.status,
         notRead: arrayNotReadMessages.length,
         message: maxDateMessages,
       };
@@ -33,6 +36,7 @@ const ContactsList = ({ filteredContacts, handlerClick }) => {
 
 ContactsList.propTypes = {
   filteredContacts: PropTypes.array,
+  messages: PropTypes.array,
   handlerClick: PropTypes.func,
 };
 
