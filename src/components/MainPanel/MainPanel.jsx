@@ -1,15 +1,22 @@
 import styled from 'styled-components';
 import Media from 'react-media';
-import PropTypes from 'prop-types';
 import User from 'components/User';
 import FilterContacts from 'components/FilterContacts';
 import SubTitle from 'components/SubTitle';
 import ContactsList from 'components/ContactsList';
+import useContextCustom from 'hooks/useContextCustom';
 import useFilter from 'hooks/useFilter';
 import userData from 'data/user';
 
-function MainPanel({ contacts, messages, handlerClick }) {
+function MainPanel() {
+  const { contacts, setIndexCheckedContact } = useContextCustom();
   const { value, handlerChangeInput, filteredContacts } = useFilter(contacts);
+
+  const setIdContact = ({ target }) => {
+    setIndexCheckedContact(
+      contacts.findIndex(el => el.id === target.dataset.id),
+    );
+  };
 
   return (
     <BoxMainPanel>
@@ -29,17 +36,12 @@ function MainPanel({ contacts, messages, handlerClick }) {
 
         <ContactsList
           filteredContacts={filteredContacts}
-          messages={messages}
-          handlerClick={handlerClick}
+          setIdContact={setIdContact}
         />
       </BoxContactsList>
     </BoxMainPanel>
   );
 }
-
-MainPanel.propTypes = {
-  contacts: PropTypes.array,
-};
 
 export default MainPanel;
 

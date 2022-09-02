@@ -2,46 +2,73 @@
 import { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import Media from 'react-media';
+import useSound from 'use-sound';
 import User from 'components/User';
 import ButtonBack from 'components/ButtonBack';
 import ChatList from 'components/ChatList';
 import FormSendMessange from 'components/FormSendMessange';
 import StartVieWChat from 'components/StartVieWChat';
+import useContextCustom from 'hooks/useContextCustom';
 import { getJokes } from 'service/jokesAPI';
 import scrollBottom from 'helpers/scrollBottom';
 import CreateMessage from 'helpers/CreateMessage';
+import toastCustom from 'helpers/toastCustom';
+import newMessage from 'assets/newMessage.mp3';
 
-function ChatPanel({
-  checkedContact,
-  messages,
-  getMessage,
-  idContact,
-  hundlerButton,
-  setReadMessage,
-}) {
+function ChatPanel() {
   const [isSend, setIsSend] = useState(false);
   const [isScroll, setIsScroll] = useState(false);
+  const [play] = useSound(newMessage);
   const chatContainer = useRef();
+  const {
+    contacts,
+    indexCheckedContact,
+    setIndexCheckedContact,
+    messages,
+    setMessages,
+  } = useContextCustom();
 
-  const handlerMessage = value => {
-    getMessage(new CreateMessage(value, idContact, 'user'));
-    setIsSend(true);
-    setIsScroll(prev => !prev);
+  useEffect(() => {
+    window.addEventListener('keydown', onClickKeyDown);
+    return () => {
+      window.removeEventListener('keydown', onClickKeyDown);
+    };
+  });
+
+  const onClickKeyDown = ({ code, target }) => {
+    if (code === 'Escape' || target.nodeName === 'BUTTON') {
+      setIndexCheckedContact(null);
+    }
+  };
+
+  const addMessage = (value, user = 'user') => {
+    const message = new CreateMessage(
+      value,
+      contacts[indexCheckedContact].id,
+      user,
+    );
+    if (message.owner === 'interlocutor') {
+      play();
+      toastCustom(
+        contacts[indexCheckedContact].avatar,
+        contacts[indexCheckedContact].name,
+        message.body,
+      );
+    }
+    setMessages(prev => [...prev, message]);
+    if (message.owner === 'user') {
+      setIsSend(true);
+      setIsScroll(prev => !prev);
+    }
   };
 
   useEffect(() => {
-    if (!chatContainer.current) return;
-    scrollBottom(chatContainer);
-    setReadMessage();
-  }, [isScroll, idContact]);
-
-  useEffect(() => {
     if (!isSend) return;
-    if (checkedContact.status === 'online') {
+    if (contacts[indexCheckedContact].status === 'online') {
       const idTimeOut = setTimeout(() => {
         getJokes()
           .then(data => {
-            getMessage(new CreateMessage(data, idContact, 'interlocutor'));
+            addMessage(data, 'interlocutor');
           })
           .then(() => setIsScroll(prev => !prev))
           .catch(error => console.log(error.message));
@@ -51,25 +78,48 @@ function ChatPanel({
     setIsSend(false);
   }, [isSend]);
 
+  useEffect(() => {
+    if (!chatContainer.current) return;
+    scrollBottom(chatContainer);
+    setReadMessage();
+  }, [isScroll, indexCheckedContact]);
+
+  const setReadMessage = () => {
+    const copyMessages = messages.map(el => {
+      if (
+        el.idOwner === contacts[indexCheckedContact].id &&
+        el.read === false
+      ) {
+        return {
+          ...el,
+          read: true,
+        };
+      } else {
+        return el;
+      }
+    });
+    setMessages(copyMessages);
+  };
+
   return (
     <BoxChatPanel>
-      {checkedContact ? (
+      {contacts[indexCheckedContact] ? (
         <>
           <Header>
             <User
-              avatar={checkedContact.avatar}
-              name={checkedContact.name}
-              status={checkedContact.status}
+              avatar={contacts[indexCheckedContact].avatar}
+              name={contacts[indexCheckedContact].name}
+              status={contacts[indexCheckedContact].status}
             />
             <Media
               query="(max-width: 767px)"
-              render={() => <ButtonBack hundlerButton={hundlerButton} />}
+              render={() => <ButtonBack hundlerButton={onClickKeyDown} />}
             />
           </Header>
           <BoxChatList ref={chatContainer}>
-            <ChatList checkedContact={checkedContact} messages={messages} />
+            <ChatList />
           </BoxChatList>
-          <FormSendMessange handlerMessage={handlerMessage} />
+          <FormSendMessange handlerMessage={addMessage} />
         </>
       ) : (
         <StartVieWChat />

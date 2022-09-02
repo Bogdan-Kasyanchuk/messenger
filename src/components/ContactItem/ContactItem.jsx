@@ -28,9 +28,7 @@ function ContactItem({ el }) {
 ContactItem.propTypes = {
   el: PropTypes.shape({
     id: PropTypes.string.isRequired,
-    avatar: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    status: PropTypes.string.isRequired,
     notRead: PropTypes.number.isRequired,
     message: PropTypes.shape({
       date: PropTypes.string.isRequired,

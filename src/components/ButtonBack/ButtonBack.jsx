@@ -11,7 +11,7 @@ function ButtonBack({ hundlerButton }) {
 }
 
 ButtonBack.propTypes = {
-  children: PropTypes.func,
+  hundlerButton: PropTypes.func,
 };
 
 export default ButtonBack;

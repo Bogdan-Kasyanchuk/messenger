@@ -1,26 +1,24 @@
-import PropTypes from 'prop-types';
 import ChatItem from 'components/ChatItem';
+import useContextCustom from 'hooks/useContextCustom';
 
-const ChatList = ({ checkedContact, messages }) => {
+const ChatList = () => {
+  const { contacts, indexCheckedContact, messages } = useContextCustom();
+
   return (
     <ul>
       {messages.map(
         el =>
-          el.idOwner === checkedContact.id && (
+          el.idOwner === contacts[indexCheckedContact].id && (
             <ChatItem
               key={el.id}
               el={el}
-              avatar={checkedContact.avatar}
-              name={checkedContact.name}
+              avatar={contacts[indexCheckedContact].avatar}
+              name={contacts[indexCheckedContact].name}
             />
           ),
       )}
     </ul>
   );
-};
-
-ChatList.propTypes = {
-  messages: PropTypes.array,
 };
 
 export default ChatList;
