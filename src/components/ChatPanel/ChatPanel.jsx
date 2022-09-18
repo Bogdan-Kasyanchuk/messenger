@@ -3,16 +3,17 @@ import { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import Media from 'react-media';
 import useSound from 'use-sound';
+import toast from 'react-hot-toast';
 import User from 'components/User';
 import ButtonBack from 'components/ButtonBack';
 import ChatList from 'components/ChatList';
 import FormSendMessange from 'components/FormSendMessange';
 import StartVieWChat from 'components/StartVieWChat';
+import ToastCustom from 'components/ToastCustom';
 import useContextCustom from 'hooks/useContextCustom';
 import { getJokes } from 'service/jokesAPI';
 import scrollBottom from 'helpers/scrollBottom';
 import CreateMessage from 'helpers/CreateMessage';
-import toastCustom from 'helpers/toastCustom';
 import newMessage from 'assets/newMessage.mp3';
 
 function ChatPanel() {
@@ -49,10 +50,12 @@ function ChatPanel() {
     );
     if (message.owner === 'interlocutor') {
       play();
-      toastCustom(
-        contacts[indexCheckedContact].avatar,
-        contacts[indexCheckedContact].name,
-        message.body,
+      toast.custom(
+        <ToastCustom
+          avatar={contacts[indexCheckedContact].avatar}
+          name={contacts[indexCheckedContact].name}
+          message={message.body}
+        />,
       );
     }
     setMessages(prev => [...prev, message]);
