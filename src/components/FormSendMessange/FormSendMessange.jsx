@@ -5,7 +5,7 @@ import ButtonSend from 'components/ButtonSend';
 import useInput from 'hooks/useInput';
 
 function FormSendMessange({ handlerMessage }) {
-  const { value, setValue, handlerChangeInput } = useInput('');
+  const { value, setValue, handlerInput } = useInput('');
 
   const sendMessange = e => {
     e.preventDefault();
@@ -19,7 +19,7 @@ function FormSendMessange({ handlerMessage }) {
         value={value}
         placeholder="Type your message"
         required
-        handlerChangeInput={handlerChangeInput}
+        handlerInput={handlerInput}
         use="formSend"
       />
       <ButtonSend />

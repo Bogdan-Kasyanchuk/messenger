@@ -1,7 +1,5 @@
-const scrollBottom = chatContainer => {
-  const scroll =
-    chatContainer.current.scrollHeight - chatContainer.current.clientHeight;
-  chatContainer.current.scrollTo(0, scroll);
+const scrollBottom = ({ current }) => {
+  current.scrollTo(0, current.scrollHeight - current.clientHeight);
 };
 
 export default scrollBottom;

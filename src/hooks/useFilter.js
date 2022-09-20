@@ -1,7 +1,7 @@
 import useInput from 'hooks/useInput';
 
 const useFilter = contacts => {
-  const { value, handlerChangeInput } = useInput('');
+  const { value, handlerInput } = useInput('');
 
   const getFilterContacts = () => {
     return contacts.filter(element =>
@@ -11,7 +11,7 @@ const useFilter = contacts => {
 
   const filteredContacts = value ? getFilterContacts() : contacts;
 
-  return { value, handlerChangeInput, filteredContacts };
+  return { value, handlerInput, filteredContacts };
 };
 
 export default useFilter;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-function Input({ value, placeholder, required, handlerChangeInput, use }) {
+function Input({ value, placeholder, required, handlerInput, use }) {
   return (
     <InputTag
       autoComplete="off"
@@ -9,7 +9,7 @@ function Input({ value, placeholder, required, handlerChangeInput, use }) {
       value={value}
       placeholder={placeholder}
       required={required}
-      onChange={handlerChangeInput}
+      onChange={handlerInput}
       use={use}
     />
   );
@@ -19,7 +19,7 @@ Input.propTypes = {
   value: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   required: PropTypes.bool,
-  handlerChangeInput: PropTypes.func,
+  handlerInput: PropTypes.func,
   use: PropTypes.string,
 };
 

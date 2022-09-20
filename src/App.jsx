@@ -4,14 +4,14 @@ import { Toaster } from 'react-hot-toast';
 import Container from 'components/Container';
 import MainPanel from 'components/MainPanel';
 import ChatPanel from 'components/ChatPanel';
-import Context from 'context';
+import Context from 'Context';
 import useLocalStorage from 'hooks/useLocalStorage';
 import contactsData from 'data/contacts';
 import messagesData from 'data/messages';
 
 function App() {
   const [contacts] = useState(contactsData);
-  const [indexCheckedContact, setIndexCheckedContact] = useState(null);
+  const [indexCheckedContact, setIndexCheckedContact] = useState(-1);
   const [messages, setMessages] = useLocalStorage(messagesData);
 
   return (

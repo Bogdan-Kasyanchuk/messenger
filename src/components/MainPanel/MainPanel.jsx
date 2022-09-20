@@ -10,7 +10,7 @@ import userData from 'data/user';
 
 function MainPanel() {
   const { contacts, setIndexCheckedContact } = useContextCustom();
-  const { value, handlerChangeInput, filteredContacts } = useFilter(contacts);
+  const { value, handlerInput, filteredContacts } = useFilter(contacts);
 
   const setIdContact = ({ target }) => {
     setIndexCheckedContact(
@@ -26,7 +26,7 @@ function MainPanel() {
           name={userData.name}
           status={userData.status}
         />
-        <FilterContacts value={value} handlerChangeInput={handlerChangeInput} />
+        <FilterContacts value={value} handlerInput={handlerInput} />
       </Header>
       <BoxContactsList>
         <Media

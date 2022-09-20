@@ -2,13 +2,13 @@ import styled from 'styled-components';
 import { AiOutlineSearch } from 'react-icons/ai';
 import Input from 'components/Input';
 
-function FilterContacts({ value, handlerChangeInput }) {
+function FilterContacts({ value, handlerInput }) {
   return (
     <Box>
       <Input
         value={value}
         placeholder="Search or start new chat"
-        handlerChangeInput={handlerChangeInput}
+        handlerInput={handlerInput}
         use="filterContacts"
       />
       <AiOutlineSearch />
